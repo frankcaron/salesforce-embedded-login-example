@@ -10,6 +10,7 @@ const HOSTED_APP_URL = process.env.HOSTED_APP_URL;
 var app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
+app.use(express.static(__dirname + '/public'));
 
 //Routes
 app.get('/', function(req, res){ 

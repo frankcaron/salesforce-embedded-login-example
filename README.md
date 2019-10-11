@@ -16,7 +16,7 @@ Follow the instructions [here](https://developer.salesforce.com/docs/atlas.en-us
 Once you've done that, you'll need to define a set of environment variables in your Heroku app:
 * The Consumer Key for your Salesforce Connected App is set as the environment variable `APP_ID`
 * The Connected App Consumer Secret is set as the environment variable `APP_SECRET`
-* The environment variable `COMMUNITY_URL` with... well, you can probably guess.
+* The environment variable `COMMUNITY_URL` with... well, you can probably guess. Don't include the /s/.
 * `OAUTH_CALLBACK_URL` is your Heroku app's fully-qualified callback URL. Just change the base URL.
 * `HOSTED_APP_URL_PROD` is your Heroku app's base URL.
 

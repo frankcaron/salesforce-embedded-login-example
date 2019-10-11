@@ -1,0 +1,8 @@
+div#salesforce-login {
+    background-color: rgba(228, 119, 57, 1);
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    width: 200px;
+    text-align: center;
+}
