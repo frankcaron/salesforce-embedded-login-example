@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/frankcaron/salesforce-embedded-login-example#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
   }
 }
