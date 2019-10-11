@@ -1,0 +1,26 @@
+{
+  "name": "salesforce-embedded-login-example",
+  "version": "1.0.0",
+  "description": "Salesforce embedded log in web interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankcaron/salesforce-embedded-login-example.git"
+  },
+  "keywords": [
+    "salesforce",
+    "ciam"
+  ],
+  "author": "Frank Caron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankcaron/salesforce-embedded-login-example/issues"
+  },
+  "homepage": "https://github.com/frankcaron/salesforce-embedded-login-example#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
