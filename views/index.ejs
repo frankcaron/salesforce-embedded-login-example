@@ -4,21 +4,27 @@
         Salesforce Embedded Log In Test Site
     </title>
 
+    <!-- Style -->
+    <link rel="stylesheet" href="/style.css" type="text/css" /> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- JS -->
+    <script src="/helper.js"></script> 
+
     <!-- Salesforce Embedded Log In Config -->
-    <meta name="salesforce-community" content="<%= community_url%>" />
-    <meta name="salesforce-client-id" content="<%= app_id%>" />
-    <meta name="salesforce-redirect-uri" content="<%= callback_url%>" />
+    <meta name="salesforce-community" content="<%= community_url%>">
+    <meta name="salesforce-client-id" content="<%= app_id%>">
+    <meta name="salesforce-redirect-uri" content="<%= callback_url%>">
     <meta name="salesforce-cache-max-age" content="60">
     <meta name="salesforce-forgot-password-enabled" content="true">
     <meta name="salesforce-logout-on-browser-close" content="true">
     <meta name="salesforce-save-access-token" content="true">
     <meta name="salesforce-self-register-starturl-enabled" content="true">
     <meta name="salesforce-use-min-js" content="true">
-    
 
-    <!-- Server Side Salesforce Embedded Log In -->
-    <meta name="salesforce-server-callback" content="false">
-    <meta name="salesforce-server-response" content="base64EncodedJSON">
+    <!-- Server Side Salesforce Custom Handlers -->
+    <meta name="salesforce-login-handler" content="onLogin">
+    <meta name="salesforce-logout-handler" content="onLogout">
 
     <!-- Salesforce Embedded Log In Custom Config -->
     <meta name="salesforce-mask-redirects" content="true">
@@ -33,12 +39,17 @@
     <script src="<%= community_url%>/servlet/servlet.loginwidgetcontroller?type=javascript_widget" async defer></script>
     <!-- --> 
 
-    <!-- Style -->
-    <link href="/style.css" rel="stylesheet" type="text/css" /> 
 
 </head>
 <body>
-    <p>Welcome <%= user%>!</p>
-    <div id="salesforce-login">Log In</div>
+    <div class="container">
+        <p>Welcome <%= user%>!</p>
+        <div id="salesforce-login">
+                <button id="sfid-login-button" class="sfid-button" onclick="SFIDWidget.login()">Log in</button>
+        </div>
+        <div>
+            <a id="logoutItem" href="javascript:SFIDWidget.logout();SFIDWidget.cancel();onLogout();" style="visibility: hidden;">Logout</a></li>
+        </div>
+    </div>
 </body>
 </html>

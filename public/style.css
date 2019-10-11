@@ -1,8 +1,15 @@
-div#salesforce-login {
+button#sfid-login-button {
+ 
     background-color: rgba(228, 119, 57, 1);
     color: #fff;
     padding: 20px;
     border-radius: 20px;
-    width: 200px;
+    width: 120px;
+    text-align: center;
+}
+div.container {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
     text-align: center;
 }

@@ -22,7 +22,7 @@ app.get('/', function(req, res){
     }) 
 }); 
 
-app.get('/oauth_callback', function(req, res){ 
+app.get('/_callback', function(req, res){ 
     res.render('callback', {
         community_url: COMMUNITY_URL,
         app_id: APP_ID,
