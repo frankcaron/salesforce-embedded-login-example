@@ -43,3 +43,6 @@ div#salesforce-login {
     right: 130px;
     z-index: 10;
 }
+span.sfid-avatar-name {
+    color: #fff;
+}
