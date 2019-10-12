@@ -1,5 +1,5 @@
 function onLogin(identity) {
-    responseJSON = JSON.parse(identity);
+    //responseJSON = JSON.parse(identity);
     console.log("Identity = " + identity);
 }
 
