@@ -19,6 +19,9 @@ Once you've done that, you'll need to define a set of environment variables in y
 * The environment variable `COMMUNITY_URL` with... well, you can probably guess. Don't include the /s/.
 * `OAUTH_CALLBACK_URL` is your Heroku app's fully-qualified callback URL. Just change the base URL.
 * `HOSTED_APP_URL_PROD` is your Heroku app's base URL without a trailing slash.
+* `BG_FAKE` is replaced with a picture of your chosen existing website. 
+
+You can modify the template code in index.ejs to align your log in button where it makes sense.
 
 # Heroku Button
 

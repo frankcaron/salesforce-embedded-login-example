@@ -5,6 +5,7 @@ const COMMUNITY_URL = process.env.COMMUNITY_URL;
 const APP_ID = process.env.APP_ID;
 const OAUTH_CALLBACK_URL = process.env.OAUTH_CALLBACK_URL;
 const HOSTED_APP_URL = process.env.HOSTED_APP_URL;
+const BG_FAKE = process.env.BG_FAKE;
 
 //Set up App
 var app = express();
@@ -18,7 +19,7 @@ app.get('/', function(req, res){
         community_url: COMMUNITY_URL,
         app_id: APP_ID,
         callback_url: OAUTH_CALLBACK_URL,
-        user: "Dudebro"
+        background: BG_FAKE
     }) 
 }); 
 

@@ -1,7 +1,9 @@
+html {
+    height: 100%;
+}
 button#sfid-login-button {
- 
-    background-color: rgba(228, 119, 57, 1);
-    color: #fff;
+    background-color: #fff;
+    color: rgba(228, 119, 57, 1);
     padding: 20px;
     border-radius: 20px;
     width: 120px;
@@ -9,7 +11,11 @@ button#sfid-login-button {
 }
 div.container {
     width: 100%;
+    height: 100%;
+    margin: 0px;
     padding: 20px;
     margin: auto;
     text-align: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
