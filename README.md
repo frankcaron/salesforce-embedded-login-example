@@ -2,7 +2,9 @@
 
 This is a simple reference implementation of Salesforce Embedded Log In, which leverages Salesforce Identity for Customers & Partners (our CIAM) to allow customers to delegate the rote but difficult work of secure authentication and user data storage / retrieval in pursuit of a 360 degree view of their customer.
 
-You can check out the official reference implementation (written in PHP) [here](https://github.com/salesforceidentity/embedded-login-example). This here fancy one, if and when it ever works, has been built with Node, Express, and EJS.
+You can check out the official reference implementation (written in PHP) [here](https://github.com/salesforceidentity/embedded-login-example). You'll also want to refer to the [Salesforce External Identity Implementation Guide](https://developer.salesforce.com/docs/atlas.en-us.externalidentityImplGuide.meta/externalidentityImplGuide/external_identity_intro.htm) to set up this org or complete the [Identity for Customers](https://trailhead.salesforce.com/en/content/learn/modules/identity_external) Trailhead module.
+
+This off-shoot and argulably more fancy example, if and when it ever works, has been built with Node, Express, and EJS. 
 
 Because I'm going to be using this for demos of the tech to customers, I've done one other little thing that'll be handy for the Solution Engineers at Salesforce. Rather than rely on a bunch of front-end code to represent the target integrated website, I've built a little bit of demo magic: the app takes a screenshot URL and uses that as the backdrop of the UX. This makes setting up a real implementation that is also quite convincing super easy.
 

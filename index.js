@@ -9,6 +9,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var cookieParser = require('cookie-parser');
+var request = require('request-promise');
 
 //Set up App
 app.set('view engine', 'ejs');
@@ -33,6 +34,38 @@ app.get('/_callback', function(req, res){
         callback_url: OAUTH_CALLBACK_URL,
         hosted_app_url: HOSTED_APP_URL
     }) 
+}); 
+
+app.get('/server_callback', function(req, res){ 
+
+    const body = {
+        "grant_type": "authorization_code",
+        "client_id": APP_ID,
+        "client_secret": APP_SECRET,
+        "code": decodeURI(req.code),
+        "redirect_uri": OAUTH_CALLBACK_URL
+    }
+
+    const startURL = decodeURI(req.state);
+    
+    //Set up Callback
+    const options = {
+        method: 'POST',
+        uri: COMMUNITY_URL + '/services/oauth2/token',
+        body: body,
+        json: true,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    request(options).then(function (response){
+        console.log(res.status(200).json(response));
+    })
+    .catch(function (err) {
+        console.log(err);
+    })
+
 }); 
 
 //Run
