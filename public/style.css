@@ -17,13 +17,12 @@ button#sfid-login-button {
     font-size: 18px;
 }
 button#sfid-login-button:hover {
-    background-color: #fff;
-    color: rgba(228, 119, 57, 1);
-    border: 5px solid #317cbd;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    background-color: 5px solid #317cbd;
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 22px;
     width: 120px;
     text-align: center;
