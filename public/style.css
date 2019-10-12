@@ -17,7 +17,7 @@ button#sfid-login-button {
     font-size: 18px;
 }
 button#sfid-login-button:hover {
-    background-color: 5px solid #317cbd;
+    background-color: #317cbd;
     color: #fff;
     padding-left: 10px;
     padding-right: 10px;
