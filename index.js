@@ -35,7 +35,8 @@ app.get('/_callback', function(req, res){
         community_url: COMMUNITY_URL,
         app_id: APP_ID,
         callback_url: OAUTH_CALLBACK_URL,
-        hosted_app_url: HOSTED_APP_URL
+        hosted_app_url: HOSTED_APP_URL,
+        static_asset_url: STATIC_ASSET_URL
     }) 
 }); 
 
