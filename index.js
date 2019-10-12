@@ -60,8 +60,10 @@ app.get('/server_callback', function(req, res){
         }
     }
 
-    request(options).then(function (response){
-        console.log(res.status(200).json(response));
+    request(options).then(function (response, body){
+        console.log("===== RESPONSE ====");
+        console.log(body);
+        console.log("===== RESPONSE ====");
     })
     .catch(function (err) {
         console.log(err);
