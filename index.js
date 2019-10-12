@@ -54,10 +54,9 @@ app.get('/server_callback', function(req, res){
     const options = {
         method: 'POST',
         uri: COMMUNITY_URL + '/services/oauth2/token',
-        body: body,
-        json: true,
+        form: body,
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/x-www-form-urlencoded'
         }
     }
 
