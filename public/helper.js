@@ -3,7 +3,7 @@ function onLogin(identity) {
     var targetDiv = document.querySelector(SFIDWidget.config.target);	
     
     var avatar = document.createElement('a'); 
-     avatar.href = "javascript:showIdentityOverlay();";
+    avatar.href = "javascript:showIdentityOverlay();";
     
     
     var img = document.createElement('img'); 
