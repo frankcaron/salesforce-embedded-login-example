@@ -1,6 +1,6 @@
 function onLogin(identity) {
     //responseJSON = JSON.parse(identity);
-    console.log("Identity = " + identityServiceResponse);
+    console.log("Identity = " + identity.dump);
 
 		
     var targetDiv = document.querySelector(SFIDWidget.config.target);	
