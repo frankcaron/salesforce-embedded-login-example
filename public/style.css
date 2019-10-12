@@ -5,9 +5,11 @@ button#sfid-login-button {
     background-color: #fff;
     color: rgba(228, 119, 57, 1);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     width: 120px;
     text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
 }
 div.container {
     width: 100%;
@@ -17,11 +19,11 @@ div.container {
     margin: auto;
     text-align: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100%;
 }
 div#salesforce-login {
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 50px;
     z-index: 10;
 }
