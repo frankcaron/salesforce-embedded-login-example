@@ -40,11 +40,12 @@ app.get('/_callback', function(req, res){
 app.get('/server_callback', function(req, res){ 
 
     const body = {
+        "code": decodeURI(req.code),
         "grant_type": "authorization_code",
         "client_id": APP_ID,
         "client_secret": APP_SECRET,
-        "code": decodeURI(req.code),
         "redirect_uri": OAUTH_CALLBACK_URL
+
     }
 
     const startURL = decodeURI(req.state);
