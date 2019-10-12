@@ -113,7 +113,8 @@ var SFIDWidget = function() {
     	}
     
     function addStartURLToUrl(url) {
-    	//Kick off useragent flow to grab them a token and log into the widget automatically
+        //Kick off useragent flow to grab them a token and log into the widget automatically
+        //OVERRIDDEN BY FRANK CARON
     	var startURLToUse = "/services/oauth2/authorize?response_type=token&client_id="+SFIDWidget.config.client_id+"&redirect_uri="+encodeURIComponent(SFIDWidget.config.redirect_uri)+"&state="+encodeURIComponent(window.location);    
         
         if(SFIDWidget.config.addStartUrlToSelfReg === "true") {
