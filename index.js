@@ -40,7 +40,7 @@ app.get('/_callback', function(req, res){
 app.get('/server_callback', function(req, res){ 
 
     const body = {
-        "code": decodeURI(req.code),
+        "code": decodeURI(req.query.code),
         "grant_type": "authorization_code",
         "client_id": APP_ID,
         "client_secret": APP_SECRET,
