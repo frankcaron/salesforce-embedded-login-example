@@ -5,6 +5,7 @@ const APP_SECRET = process.env.APP_SECRET;
 const OAUTH_CALLBACK_URL = process.env.OAUTH_CALLBACK_URL;
 const HOSTED_APP_URL = process.env.HOSTED_APP_URL;
 const BG_FAKE = process.env.BG_FAKE;
+const STATIC_ASSET_URL = process.env.STATIC_ASSET_URL;
 
 var express = require('express');
 var path = require('path');
@@ -24,7 +25,8 @@ app.get('/', function(req, res){
         community_url: COMMUNITY_URL,
         app_id: APP_ID,
         callback_url: OAUTH_CALLBACK_URL,
-        background: BG_FAKE
+        background: BG_FAKE,
+        static_asset_url: STATIC_ASSET_URL
     }) 
 }); 
 
@@ -38,6 +40,8 @@ app.get('/_callback', function(req, res){
 }); 
 
 app.get('/server_callback', function(req, res){ 
+
+    console.log("Server Callback: Requesting the access token...");
 
     const body = {
         "code": decodeURI(req.query.code),
@@ -62,23 +66,46 @@ app.get('/server_callback', function(req, res){
 
     request(options).then(function (response){
 
+        console.log("Server Callback: Retrieved the access token successfully.");
+
         //Parse response
         responseJSON = JSON.parse(response);
 
-        /* 
-        console.log("===== RESPONSE ====");
-        console.log(responseJSON);
-        console.log("===== RESPONSE ====");
+        var accessToken = responseJSON.access_token;
+        var identity = responseJSON.id;
 
-        String accessToken = token.getString("access_token");
-        String identity = token.getString("id");
+        console.log("Server Callback: Requesting the identity data...");
+
+        /*
         
-        GetMethod get = new GetMethod(identity + "?version=latest");
-        get.setFollowRedirects(true);
-        get.addRequestHeader("Authorization", "Bearer " + accessToken);
+        //Set up Callback
+        const options = {
+            method: 'GET',
+            uri: identity + '?version=latest',
+            body: body,
+            json: true,
+            followAllRedirects: true,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + accessToken
+            }
+        }
+
+        request(options).then(function (response){
+            
+            console.log("Server Callback: Retrieved identity data successfully.");
+            console.log("Server Callback: Creating redirect page.");
+
+            responseJSON = JSON.parse(response);
+
+
+        })
+
+        .catch(function (err) {
+            console.log(err);
+        })
+
         */
-
-
     })
     .catch(function (err) {
         console.log(err);
