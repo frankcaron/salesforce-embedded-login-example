@@ -4,5 +4,27 @@
     "repository": "https://github.com/frankcaron/salesforce-embedded-login-example.git",
     "logo": "",
     "keywords": ["node", "express", "heroku", "salesforce"],
-    "image": "heroku/nodejs"
+    "image": "heroku/nodejs",
+    "env" :{
+      "APP_SECRET" : {
+        "description": "The Consumer Key of your Salesforce Connected App",
+        "value": "Your value here"
+      },
+      "COMMUNITY_URL" : {
+        "description": "The URL to your community, without any trailing characters.",
+        "value": "Your value here"
+      },
+      "OAUTH_CALLBACK_URL" : {
+        "description": "The URL to your Heroku app's callback, without any trailing characters.",
+        "value": "Your Heroku app plus /_callback"
+      },
+      "HOSTED_APP_URL" : {
+        "description": "The URL to your Heroku app, without any trailing characters.",
+        "value": "Your value here"
+      },
+      "BG_FAKE" : {
+        "description": "The URL to your community, without any trailing characters.",
+        "value": "Your value here"
+      }
+    }
   }

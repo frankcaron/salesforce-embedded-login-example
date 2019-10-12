@@ -1,5 +1,3 @@
-var express = require('express');
-var path = require('path');
 const PORT = process.env.PORT || 5000;
 const COMMUNITY_URL = process.env.COMMUNITY_URL;
 const APP_ID = process.env.APP_ID;
@@ -7,11 +5,16 @@ const OAUTH_CALLBACK_URL = process.env.OAUTH_CALLBACK_URL;
 const HOSTED_APP_URL = process.env.HOSTED_APP_URL;
 const BG_FAKE = process.env.BG_FAKE;
 
-//Set up App
+var express = require('express');
+var path = require('path');
 var app = express();
+var cookieParser = require('cookie-parser');
+
+//Set up App
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 app.use(express.static(__dirname + '/public'));
+app.use(cookieParser());
 
 //Routes
 app.get('/', function(req, res){ 
