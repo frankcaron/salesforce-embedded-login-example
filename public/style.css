@@ -20,10 +20,10 @@ button#sfid-login-button:hover {
     background-color: #fff;
     color: rgba(228, 119, 57, 1);
     border: 5px solid #317cbd;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     border-radius: 22px;
     width: 120px;
     text-align: center;
