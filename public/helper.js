@@ -7,7 +7,7 @@ function onLogin(identity) {
     
     
     var img = document.createElement('img'); 
-     img.src = identity.photos.thumbnail; 
+    img.src = identity.photos.thumbnail; 
     img.className = "sfid-avatar";
 
     var username = document.createElement('span'); 
@@ -23,7 +23,6 @@ function onLogin(identity) {
 
     targetDiv.innerHTML = '';
     targetDiv.appendChild(iddiv);	
-    
 }
 
 
