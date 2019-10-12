@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>
@@ -37,6 +38,14 @@
     </div>
 
     <!-- Visual JS -->
-    <script src="/helper.js"></script>
+    <script>
+        function onLogin(identity) {
+            alert("logged in" + identity);
+        }
+
+        function onLogout() {
+            SFIDWidget.init();
+        }
+    </script>
 </body>
 </html>
