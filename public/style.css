@@ -26,7 +26,7 @@ div.container {
 }
 div#salesforce-login {
     position: absolute;
-    top: 20px;
-    right: 100px;
+    top: 40px;
+    right: 130px;
     z-index: 10;
 }
