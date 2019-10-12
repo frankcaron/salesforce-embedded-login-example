@@ -6,7 +6,7 @@ function onLogin(identity) {
         img.src = identity.photos.thumbnail;
     img.className = "sfid-avatar";
 
-    var logout = document.getElementById("logoutItem");
+    var logout = document.getElementById("salesforce-logout");
     logout.style.visibility = "visible";
 
     var username = document.createElement('span');
@@ -64,7 +64,7 @@ function onLogin(identity) {
 	
 function onLogout() {
         //SFIDWidget.init();
-    var logout = document.getElementById("logoutItem");
+    var logout = document.getElementById("salesforce-logout");
             logout.style.display = "none";
     location.reload();
 
