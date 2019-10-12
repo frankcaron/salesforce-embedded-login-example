@@ -1,4 +1,6 @@
 function onLogin(identity) {
+
+    alert("logged in");
 		
     var targetDiv = document.querySelector(SFIDWidget.config.target);	
     
