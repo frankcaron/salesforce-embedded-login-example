@@ -7,7 +7,7 @@ function onLogout() {
 }
 
 //* Get value from local storage *//
-var identity = localStorage.getItem('identity');
+var identity = localStorage
 if (identity != null) {
     document.write("Identity is " + identity);
 }
