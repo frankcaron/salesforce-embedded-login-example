@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/style.css" type="text/css" /> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+    <!-- Visual JS -->
+    <script src="/helper.js"></script>
+
     <!-- Salesforce Embedded Log In Config -->
     <meta name="salesforce-community" content="<%= community_url%>">
     <meta name="salesforce-client-id" content="<%= app_id%>">
@@ -36,13 +39,13 @@
     <!-- <script src="<%= community_url%>/servlet/servlet.loginwidgetcontroller?type=javascript_widget" async defer></script> --> 
     <script src="<%= static_asset_url %>" async defer></script>
     <!-- --> 
+
 </head>
 <body>
     <div class="container" style="background-image: url('<%= background%>');">
         <div id="salesforce-login"></div>
     </div>
 
-    <!-- Visual JS -->
-    <script src="/helper.js"></script>
+    
 </body>
 </html>
