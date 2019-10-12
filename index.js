@@ -60,9 +60,9 @@ app.get('/server_callback', function(req, res){
         }
     }
 
-    request(options).then(function (response, body){
+    request(options).then(function (response){
         console.log("===== RESPONSE ====");
-        console.log(body);
+        console.log(response);
         console.log("===== RESPONSE ====");
     })
     .catch(function (err) {
