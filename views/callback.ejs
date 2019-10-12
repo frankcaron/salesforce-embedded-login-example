@@ -8,6 +8,10 @@
 	<meta name="salesforce-save-access-token" content="true">
 	<meta name="salesforce-allowed-domains" content="<%= hosted_app_url %>">
 
+	<meta name="salesforce-target" content="#salesforce-login">
+    <meta name="salesforce-login-handler" content="onLogin">
+    <meta name="salesforce-logout-handler" content="onLogout">
+
 	<!-- Salesforce Embedded Log In External Files -->
 	<script src="<%= community_url%>/servlet/servlet.loginwidgetcontroller?type=javascript_widget" async defer></script>
 	<!-- --> 
