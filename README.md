@@ -18,7 +18,7 @@ Once you've done that, you'll need to define a set of environment variables in y
 * The Connected App Consumer Secret is set as the environment variable `APP_SECRET`
 * The environment variable `COMMUNITY_URL` with... well, you can probably guess. Don't include the /s/.
 * `OAUTH_CALLBACK_URL` is your Heroku app's fully-qualified callback URL. Just change the base URL.
-* `HOSTED_APP_URL_PROD` is your Heroku app's base URL.
+* `HOSTED_APP_URL_PROD` is your Heroku app's base URL without a trailing slash.
 
 # Heroku Button
 
