@@ -61,9 +61,24 @@ app.get('/server_callback', function(req, res){
     }
 
     request(options).then(function (response){
+
+        //Parse response
+        responseJSON = JSON.parse(response);
+
+        /* 
         console.log("===== RESPONSE ====");
-        console.log(response);
+        console.log(responseJSON);
         console.log("===== RESPONSE ====");
+
+        String accessToken = token.getString("access_token");
+        String identity = token.getString("id");
+        
+        GetMethod get = new GetMethod(identity + "?version=latest");
+        get.setFollowRedirects(true);
+        get.addRequestHeader("Authorization", "Bearer " + accessToken);
+        */
+
+
     })
     .catch(function (err) {
         console.log(err);
