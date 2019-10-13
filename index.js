@@ -12,6 +12,7 @@ var path = require('path');
 var app = express();
 var cookieParser = require('cookie-parser');
 var request = require('request-promise');
+var jsforce = require('jsforce');
 
 //Set up App
 app.set('view engine', 'ejs');
@@ -22,6 +23,29 @@ app.use(cookieParser());
 //Routes
 app.get('/', function(req, res){ 
     res.render('index', {
+        community_url: COMMUNITY_URL,
+        app_id: APP_ID,
+        callback_url: OAUTH_CALLBACK_URL,
+        background: BG_FAKE,
+        static_asset_url: STATIC_ASSET_URL
+    }) 
+}); 
+
+app.get('/profile', function(req, res){ 
+
+    var conn = new jsforce.Connection({
+        instanceUrl : COMMUNITY_URL,
+        accessToken : req.query.code
+    });
+
+    var records = [];
+    conn.query("SELECT Id, Name FROM Contact WHERE Id = '" + req.query.id + "'", function(err, result) {
+        if (err) { return console.error(err); }
+        console.log("Contact result : " + result.totalSize);
+        console.log("Number of contacts found : " + result.records.length);
+    });
+
+    res.render('profile', {
         community_url: COMMUNITY_URL,
         app_id: APP_ID,
         callback_url: OAUTH_CALLBACK_URL,
