@@ -73,20 +73,25 @@ app.get('/server_callback', function(req, res){
 
     console.log("Server Callback: Requesting the access token...");
 
+    //Parse query string
+
+    var code = req.query.code;
+    if (req.query.code != null) {
+        code = decodeURI(code);
+    } 
+
+    var startURL = req.query.state;
+    if (req.query.state != null) {
+        startURL = decodeURI(startURL);
+    }
+
+    //Set up request body
     const body = {
-        "code": decodeURI(req.query.code),
+        "code": code,
         "grant_type": "authorization_code",
         "client_id": APP_ID,
         "client_secret": APP_SECRET,
         "redirect_uri": OAUTH_CALLBACK_URL
-    }
-
-    var startURL = req.query.state;
-
-    if (req.query.state != null) {
-        startURL = decodeURI(startURL);
-    } else {
-        startURL = "/"
     }
     
     //Set up Callback
