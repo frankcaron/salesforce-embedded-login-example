@@ -14,6 +14,9 @@ var cookieParser = require('cookie-parser');
 var request = require('request-promise');
 var jsforce = require('jsforce');
 
+//App vars
+var refreshToken = "";
+
 //Set up App
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
@@ -100,9 +103,11 @@ app.get('/server_callback', function(req, res){
         console.log(JSON.stringify(responseJSON));
 
         var accessToken = responseJSON.access_token;
-        var refreshToken = responseJSON.refresh_token;
         var idToken = responseJSON.id_token;
         var identity = responseJSON.id;
+
+        //Update refresh token
+        refreshToken = responseJSON.refresh_token;
 
         console.log("Server Callback: Requesting the identity data...");
         
@@ -123,6 +128,7 @@ app.get('/server_callback', function(req, res){
             
             console.log("Server Callback: Retrieved identity data successfully.");
             console.log("Server Callback: Creating redirect page.");
+            console.log(response.toString);
 
             responseJSON = JSON.parse(response);
             console.log("Server Callback Identity Response: " + JSON.stringify(responseJSON));
