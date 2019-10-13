@@ -35,7 +35,7 @@ app.get('/profile', function(req, res){
 
     var conn = new jsforce.Connection({
         instanceUrl : COMMUNITY_URL,
-        accessToken : req.query.code
+        accessToken : decodeURI(req.query.code)
     });
 
     var records = [];
