@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- Salesforce Embedded Log In Config -->
+	<meta name="salesforce-community" content="<%= community_url%>">
+	<meta name="salesforce-mode" content="modal-callback">
+	<meta name="salesforce-save-access-token" content="true">
+	<meta name="salesforce-allowed-domains" content="<%= hosted_app_url %>">
+
+	<meta name="salesforce-target" content="#salesforce-login">
+    <meta name="salesforce-login-handler" content="onLogin">
+	<meta name="salesforce-logout-handler" content="onLogout">
+	
+	<!-- Salesforce Embedded Log In Server Side Data -->
+	<meta name="salesforce-server-response" content="<%= identity_response %>">
+	<meta name="salesforce-server-starturl" content="<%= hosted_app_url %>">
+	<meta name="salesforce-server-callback" content="true">
+
+	<!-- Salesforce Embedded Log In External Files -->
+	<script src="<%= static_asset_url %>" async defer></script></script>
+	<!-- --> 
+
+</head> 
+<body></body>        
+</html>

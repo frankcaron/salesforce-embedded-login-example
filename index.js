@@ -125,7 +125,16 @@ app.get('/server_callback', function(req, res){
             console.log("Server Callback: Creating redirect page.");
 
             responseJSON = JSON.parse(response);
+            console.log("Server Callback Identity Response: " + JSON.stringify(responseJSON));
 
+            res.render('server_callback', {
+                community_url: COMMUNITY_URL,
+                app_id: APP_ID,
+                callback_url: OAUTH_CALLBACK_URL,
+                hosted_app_url: HOSTED_APP_URL,
+                static_asset_url: STATIC_ASSET_URL,
+                identity_response: responseJSON.toString('base64')
+            }) 
 
         })
 
