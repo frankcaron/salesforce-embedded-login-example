@@ -128,7 +128,7 @@ app.get('/server_callback', function(req, res){
             
             console.log("Server Callback: Retrieved identity data successfully.");
             console.log("Server Callback: Creating redirect page.");
-            console.log(response.toString);
+            console.log(response.toString());
 
             responseJSON = JSON.parse(response);
             console.log("Server Callback Identity Response: " + JSON.stringify(responseJSON));
