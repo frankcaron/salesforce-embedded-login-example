@@ -81,10 +81,12 @@ app.get('/server_callback', function(req, res){
         "redirect_uri": OAUTH_CALLBACK_URL
     }
 
-    var startURL = "/";
+    var startURL = req.query.state;
 
-    if (decodeURI(req.state) != null) {
-        startURL = decodeURI(req.state);
+    if (req.state != null) {
+        startURL = decodeURI(startURL);
+    } else {
+        startURL = "/"
     }
     
     //Set up Callback
