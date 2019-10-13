@@ -1075,7 +1075,8 @@ function SFIDWidgetHandleOpenIDCallback(response) {
     identityObj.oid = response.organization_id;
     identityObj.instance = SFIDWidget.config.communityURL;
     identityObj.ll = response.is_lightning_login_user;
-    identityObj.dump = response;
+    identityObj.dump = SFIDWidget.openid_response;
+    identityObj.access_token = SFIDWidget.openid_response.access_token;
 
     SFIDWidget.setToken({
           uid: response.user_id,
