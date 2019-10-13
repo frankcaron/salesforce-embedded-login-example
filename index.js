@@ -81,7 +81,9 @@ app.get('/server_callback', function(req, res){
     var code = req.query.code;
     if (req.query.code != null) {
         code = decodeURI(code);
-    } 
+    } else {
+        res.redirect('/');
+    }
 
     var startURL = req.query.state;
     if (req.query.state != null) {
