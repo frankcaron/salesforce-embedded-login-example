@@ -71,6 +71,8 @@ app.get('/_callback', function(req, res){
 
 app.get('/server_callback', function(req, res){ 
 
+    console.log("Server Callback query: req.query.toString())";
+
     console.log("Server Callback: Requesting the access token...");
 
     //Parse query string
