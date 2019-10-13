@@ -128,10 +128,7 @@ app.get('/server_callback', function(req, res){
             
             console.log("Server Callback: Retrieved identity data successfully.");
             console.log("Server Callback: Creating redirect page.");
-            console.log(response.toString().toString());
-
-            responseJSON = JSON.parse(response.toString());
-            console.log("Server Callback Identity Response: " + JSON.stringify(responseJSON));
+            console.log("Server Callback Identity Response: " + JSON.stringify(response));
 
             res.render('server_callback', {
                 community_url: COMMUNITY_URL,
@@ -139,7 +136,7 @@ app.get('/server_callback', function(req, res){
                 callback_url: OAUTH_CALLBACK_URL,
                 hosted_app_url: HOSTED_APP_URL,
                 static_asset_url: STATIC_ASSET_URL,
-                identity_response: responseJSON.toString('base64')
+                identity_response: response.toString('base64')
             }) 
 
         })
