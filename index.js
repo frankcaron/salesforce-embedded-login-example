@@ -81,7 +81,12 @@ app.get('/server_callback', function(req, res){
         "redirect_uri": OAUTH_CALLBACK_URL
     }
 
-    const startURL = decodeURI(req.state);
+    if (decodeURI(req.state) != null) {
+        const startURL = decodeURI(req.state);
+    } else {
+        const startURL = "/";
+    }
+    
     
     //Set up Callback
     const options = {
