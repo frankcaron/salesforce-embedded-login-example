@@ -100,11 +100,11 @@ app.get('/server_callback', function(req, res){
         console.log(JSON.stringify(responseJSON));
 
         var accessToken = responseJSON.access_token;
+        var refreshToken = responseJSON.refresh_token;
+        var idToken = responseJSON.id_token;
         var identity = responseJSON.id;
 
         console.log("Server Callback: Requesting the identity data...");
-
-        /*
         
         //Set up Callback
         const options = {
@@ -133,7 +133,6 @@ app.get('/server_callback', function(req, res){
             console.log(err);
         })
 
-        */
     })
     .catch(function (err) {
         console.log(err);
