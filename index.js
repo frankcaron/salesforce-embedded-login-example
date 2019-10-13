@@ -83,7 +83,7 @@ app.get('/server_callback', function(req, res){
 
     var startURL = req.query.state;
 
-    if (req.state != null) {
+    if (req.query.state != null) {
         startURL = decodeURI(startURL);
     } else {
         startURL = "/"
