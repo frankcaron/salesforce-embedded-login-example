@@ -131,7 +131,7 @@ app.get('/server_callback', function(req, res){
 
             var JSONresponse = JSON.stringify(response);
 
-            console.log("Server Callback Identity Response: " + JSONResponse);
+            console.log("Server Callback Identity Response: " + JSONresponse);
 
             res.render('server_callback', {
                 community_url: COMMUNITY_URL,
