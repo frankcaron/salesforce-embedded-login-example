@@ -137,6 +137,7 @@ app.get('/server_callback', function(req, res){
                 community_url: COMMUNITY_URL,
                 app_id: APP_ID,
                 callback_url: OAUTH_CALLBACK_URL,
+                start_url: startURL,
                 hosted_app_url: HOSTED_APP_URL,
                 static_asset_url: STATIC_ASSET_URL,
                 identity_response: Buffer.from(JSONresponse).toString("base64")
