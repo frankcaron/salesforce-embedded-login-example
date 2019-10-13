@@ -33,6 +33,7 @@ app.get('/', function(req, res){
 
 app.get('/profile', function(req, res){ 
 
+    /* 
     var conn = new jsforce.Connection({
         instanceUrl : COMMUNITY_URL,
         accessToken : decodeURI(req.query.code)
@@ -44,6 +45,7 @@ app.get('/profile', function(req, res){
         console.log("Contact result : " + result.totalSize);
         console.log("Number of contacts found : " + result.records.length);
     });
+    */
 
     res.render('profile', {
         community_url: COMMUNITY_URL,
@@ -74,7 +76,6 @@ app.get('/server_callback', function(req, res){
         "client_id": APP_ID,
         "client_secret": APP_SECRET,
         "redirect_uri": OAUTH_CALLBACK_URL
-
     }
 
     const startURL = decodeURI(req.state);
@@ -95,6 +96,8 @@ app.get('/server_callback', function(req, res){
 
         //Parse response
         responseJSON = JSON.parse(response);
+
+        console.log(JSON.stringify(responseJSON));
 
         var accessToken = responseJSON.access_token;
         var identity = responseJSON.id;
