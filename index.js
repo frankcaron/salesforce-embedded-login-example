@@ -16,6 +16,7 @@ var jsforce = require('jsforce');
 
 //App vars
 var refreshToken = "";
+var accessToken = "";
 
 //Set up App
 app.set('view engine', 'ejs');
@@ -38,14 +39,16 @@ app.get('/profile', function(req, res){
 
     var conn = new jsforce.Connection({
         instanceUrl : COMMUNITY_URL,
-        accessToken : decodeURI(req.query.code)
+        accessToken : accessToken
     });
+
+    console.log("Profile Render: Fetching profile information...")
 
     var records = [];
     conn.query("SELECT Id, Name FROM Contact WHERE Id = '" + req.query.id + "'", function(err, result) {
         if (err) { return console.error(err); }
-        console.log("Contact result : " + result.totalSize);
-        console.log("Number of contacts found : " + result.records.length);
+        console.log("Profile Render: Contact result size is " + result.totalSize);
+        console.log("Profile Render: Number of contacts found is " + result.records.length);
     });
 
     res.render('profile', {
@@ -116,13 +119,13 @@ app.get('/server_callback', function(req, res){
         //Parse response
         responseJSON = JSON.parse(response);
 
-        console.log(JSON.stringify(responseJSON));
-
-        var accessToken = responseJSON.access_token;
+        console.log("Server Callback: Payload is..." + JSON.stringify(responseJSON));
+        
         var idToken = responseJSON.id_token;
         var identity = responseJSON.id;
 
         //Update refresh token
+        accessToken = responseJSON.access_token;
         refreshToken = responseJSON.refresh_token;
 
         console.log("Server Callback: Requesting the identity data...");
