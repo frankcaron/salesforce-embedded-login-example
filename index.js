@@ -183,7 +183,15 @@ app.get('/logout', function(req, res){
     accessToken = "";
     refreshToken = "";
     sessionContact = "";
-    res.render('logout');
+
+    //
+    res.render('logout', {
+        community_url: COMMUNITY_URL,
+        app_id: APP_ID,
+        callback_url: OAUTH_CALLBACK_URL,
+        background: BG_FAKE,
+        static_asset_url: STATIC_ASSET_URL
+    }) 
 
 }); 
 
