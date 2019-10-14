@@ -36,5 +36,5 @@ function onLogin(identity) {
 
 function onLogout() {
     SFIDWidget.init();
-    window.location.replace="/";
+    window.location="/";
 }
