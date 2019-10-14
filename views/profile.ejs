@@ -47,11 +47,14 @@
             <div id="contactDetails">
                     <div class="card">
                         <div class="card-header">
-                                <%= contactRecords[0].FirstName %>&nbsp;<%= contactRecords[0].LastName %>
+                                Your Profile
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><%= contactRecords[0].Email %></h5>
-                            <p class="card-text"><%= contactRecords[0].Phone %></p>
+                            <h5 class="card-title"><%= contactRecords[0].FirstName %>&nbsp;<%= contactRecords[0].LastName %></h5>
+                            <p class="card-text">
+                                <%= contactRecords[0].Phone %><br />
+                                <%= contactRecords[0].Email %>
+                            </p>
                             <a href="#" class="btn btn-primary">Update</a>
                         </div>
                     </div>
