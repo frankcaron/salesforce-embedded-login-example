@@ -50,6 +50,7 @@ Just make sure your user profile has read-write to the appropriate related recor
 
 # To Do
 
+* Fix logout
 * Refactor to remove bespoke Embedded Login js file once the prod issue is patched
 * Add session management or cooking on the server side to allow more than one person to demo at a time, haha.
 
