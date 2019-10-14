@@ -59,33 +59,35 @@ app.get('/profile', function(req, res){
 
         contactRecords = result.records;
         console.log("Profile Render: Contact retrieved " + JSON.stringify(contactRecords));
+        console.log("Profile Render: Contact has external ID of " + contactRecords[0].attributes.customerID__c);
 
-        //Grab Bookings
-        conn.query("SELECT customerID__c,DisplayUrl,ExternalId,orderDate__c,orderID__c,shippedDate__c FROM Bookings__x WHERE customerID__c = '" + contactRecords[0].attributes.customerID__c + "'", function(err, result) {
+        //Grab Wishlist
+        conn.query("SELECT Contact__c,CreatedDate,Id,Wish_Detail__c FROM Wish__c WHERE Contact__c = '" + sessionContact + "'", function(err, result) {
             if (err) { return console.error(err); }
-            console.log("Profile Render: Bookings result size is " + result.totalSize);
-            console.log("Profile Render: Number of bookings found is " + result.records.length);
+            console.log("Profile Render: Wishlist result size is " + result.totalSize);
+            console.log("Profile Render: Number of wishes found is " + result.records.length);
     
-            bookingRecords = result.records;
-            console.log("Profile Render: Bookings retrieved " + JSON.stringify(bookingRecords));
-    
-            //Grab Wishlist
-            conn.query("SELECT Contact__c,CreatedDate,Id,Wish_Detail__c FROM Wish__c WHERE Contact__c = '" + sessionContact + "'", function(err, result) {
-                if (err) { return console.error(err); }
-                console.log("Profile Render: Wishlist result size is " + result.totalSize);
-                console.log("Profile Render: Number of wishes found is " + result.records.length);
-        
-                wishes = result.records;
-                console.log("Profile Render: wishes retrieved " + JSON.stringify(wishes));
+            wishes = result.records;
+            console.log("Profile Render: wishes retrieved " + JSON.stringify(wishes));
 
-                //Grab Searches
-                conn.query("SELECT Contact__c,CreatedDate,Id,Location__c FROM Searches__c WHERE Contact__c = '" + sessionContact + "'", function(err, result) {
+            //Grab Searches
+            conn.query("SELECT Contact__c,CreatedDate,Id,Location__c FROM Searches__c WHERE Contact__c = '" + sessionContact + "'", function(err, result) {
+                if (err) { return console.error(err); }
+                console.log("Profile Render: Search result size is " + result.totalSize);
+                console.log("Profile Render: Number of searches found is " + result.records.length);
+        
+                searchRecords = result.records;
+                console.log("Profile Render: Searches retrieved " + JSON.stringify(searchRecords));
+
+                //Grab Bookings
+                conn.query("SELECT DisplayUrl, ExternalId, orderDate__c, orderID__c, shippedDate__c FROM Bookings__x WHERE customerID__c = '" + contactRecords[0].attributes.customerID__c + "' LIMIT 50", function(err, result) {
                     if (err) { return console.error(err); }
-                    console.log("Profile Render: Search result size is " + result.totalSize);
-                    console.log("Profile Render: Number of searches found is " + result.records.length);
+                    console.log("Profile Render: Bookings result size is " + result.totalSize);
+                    console.log("Profile Render: Number of bookings found is " + result.records.length);
             
-                    searchRecords = result.records;
-                    console.log("Profile Render: Searches retrieved " + JSON.stringify(searchRecords));
+                    bookingRecords = result.records;
+                    console.log("Profile Render: Bookings retrieved " + JSON.stringify(bookingRecords));
+
 
                     //Render the page once records are fetched
                     res.render('profile', {
