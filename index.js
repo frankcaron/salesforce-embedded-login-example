@@ -128,7 +128,6 @@ app.get('/server_callback', function(req, res){
         //Update refresh token
         accessToken = responseJSON.access_token;
         refreshToken = responseJSON.refresh_token;
-        sessionContact = responseJSON.custom_attributes.ContactID;
 
         console.log("Server Callback: Requesting the identity data...");
         
@@ -153,6 +152,7 @@ app.get('/server_callback', function(req, res){
             var JSONresponse = JSON.stringify(response);
 
             console.log("Server Callback Identity Response: " + JSONresponse);
+            sessionContact = JSONresponse.custom_attributes.ContactID;
 
             res.render('server_callback', {
                 community_url: COMMUNITY_URL,
