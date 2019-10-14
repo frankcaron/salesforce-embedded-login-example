@@ -61,7 +61,7 @@ app.get('/profile', function(req, res){
         console.log("Profile Render: Contact retrieved " + JSON.stringify(contactRecords));
 
         //Grab Bookings
-        conn.query("SELECT customerID__c,DisplayUrl,ExternalId,orderDate__c,orderID__c,shippedDate__c FROM Bookings__x WHERE customerID__c = " + contactRecords[0].attributes.customerID__c + "'", function(err, result) {
+        conn.query("SELECT customerID__c,DisplayUrl,ExternalId,orderDate__c,orderID__c,shippedDate__c FROM Bookings__x WHERE customerID__c = '" + contactRecords[0].attributes.customerID__c + "'", function(err, result) {
             if (err) { return console.error(err); }
             console.log("Profile Render: Bookings result size is " + result.totalSize);
             console.log("Profile Render: Number of bookings found is " + result.records.length);
