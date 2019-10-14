@@ -36,7 +36,7 @@ function onLogin(identity) {
 
 function onLogout() {
     SFIDWidget.logout();
-    SFIDWidget.init();
+    //SFIDWidget.init();
 
     console.log("Attempted to expire token and init.");
 
