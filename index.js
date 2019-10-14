@@ -42,7 +42,7 @@ app.get('/profile', function(req, res){
     console.log("Profile Render: Double-checking access is valid. Session equals " + accessToken)
 
     // Redirect if the access token is missing
-    if(accessToken == null) {
+    if(accessToken == null || accessToken == "") {
         res.redirect('/');
     }
 
