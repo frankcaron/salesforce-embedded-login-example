@@ -11,7 +11,7 @@ function onLogin(identity) {
     var username = document.createElement('a'); 
 
     /* If using client-side auth 
-    username.href = "https://sunwing-embedded-login-sfdc.herokuapp.com/profile?accesstoken=" + SFIDWidget.openid_response.access_token + "&id=" + SFIDWidget.openid_response.custom_attributes.ContactID;
+    username.href = "https://.herokuapp.com/profile?accesstoken=" + SFIDWidget.openid_response.access_token + "&id=" + SFIDWidget.openid_response.custom_attributes.ContactID;
     */
 
     username.href = "/profile";
