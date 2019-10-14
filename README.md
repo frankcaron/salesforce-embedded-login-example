@@ -19,6 +19,8 @@ You will need:
 # Salesforce Connected App Set Up
 Follow the instructions [here](https://developer.salesforce.com/docs/atlas.en-us.externalidentityImplGuide.meta/externalidentityImplGuide/external_identity_login_step_2.htm) for setting up a connected app. When configuring your connected app, be sure to use the URL `https://<yourherokuapp>.herokuapp.com/oauth_callback` for the call back.
 
+# Heroku Environment Variables
+
 Once you've done that, you'll need to define a set of environment variables in your Heroku app:
 * The Consumer Key for your Salesforce Connected App is set as the environment variable `APP_ID`
 * The Connected App Consumer Secret is set as the environment variable `APP_SECRET`
@@ -26,6 +28,10 @@ Once you've done that, you'll need to define a set of environment variables in y
 * `OAUTH_CALLBACK_URL` is your Heroku app's fully-qualified callback URL. Just change the base URL.
 * `HOSTED_APP_URL_PROD` is your Heroku app's base URL without a trailing slash.
 * `BG_FAKE` is replaced with a picture of your chosen existing website for the background. 
+
+You'll also need to take the `sfdc_authmagic.js` file and upload it as public static content to your Salesforce org. The fully-qualified URL should be then filled into the final environment `STATIC_ASSET_URL`.
+
+# Tweaking the Front-End
 
 You can modify the template code in index.ejs to align your log in button where it makes sense.
 

@@ -43,6 +43,10 @@ div#salesforce-login {
     right: 130px;
     z-index: 10;
 }
-span.sfid-avatar-name {
+a.sfid-avatar-name, a.sfid-avatar-name:visited {
     color: #fff;
+}
+a.sfid-avatar-name:hover {
+    color: #fff;
+    text-decoration: none;
 }
