@@ -46,7 +46,7 @@ app.get('/profile', function(req, res){
     console.log("Profile Render: Fetching profile information...")
 
     var records = [];
-    conn.query("SELECT Id, Name FROM Contact WHERE Id = '" + req.query.id + "'", function(err, result) {
+    conn.query("SELECT Id, Name FROM Contact WHERE Id = '" + sessionContact + "'", function(err, result) {
         if (err) { return console.error(err); }
         console.log("Profile Render: Contact result size is " + result.totalSize);
         console.log("Profile Render: Number of contacts found is " + result.records.length);
