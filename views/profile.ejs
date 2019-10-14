@@ -50,7 +50,7 @@
                                 <%= contactRecords[0].FirstName %>&nbsp;<%= contactRecords[0].LastName %>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><%= contactRecords[0].email %></h5>
+                            <h5 class="card-title"><%= contactRecords[0].Email %></h5>
                             <p class="card-text"><%= contactRecords[0].Phone %></p>
                             <a href="#" class="btn btn-primary">Update</a>
                         </div>
@@ -58,6 +58,7 @@
             </div>
             <div id="profile-info">
                 <div id="wishes">
+                    <h3>Wishlist</h3>
                     <div class="row">
                         <% for(var i=0; i<wishes.length; i++) {%>
                             <div class="col-sm-3">
@@ -72,6 +73,7 @@
                     </div>
                 </div>
                 <div id="searches">
+                    <h3>Search History</h3>
                     <div class="row">
                         <% for(var i=0; i<searchRecords.length; i++) {%>
                             <div class="col-sm-3">
@@ -86,14 +88,15 @@
                     </div>
                 </div>    
                 <div id="bookings">
+                    <h3>Past Bookings</h3>
                     <div class="row">
                         <% for(var i=0; i<bookingRecords.length; i++) {%>
                             <div class="col-sm-3">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title"><%= bookingRecords[i].orderDate__c %></h5>
+                                        <h5 class="card-title"><%= bookingRecords[i].orderID__c %></h5>
                                         <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                        <p class="card-text"><%= bookingRecords[i].orderID__c %></p>
+                                        <p class="card-text"><%= bookingRecords[i].orderDate__c %></p>
                                         <a href="#" class="card-link">View details</a>
                                     </div>
                                 </div>

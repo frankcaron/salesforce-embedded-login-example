@@ -72,8 +72,9 @@ a.sfid-avatar-name:hover {
 
 /* Profile */
 div.card {
-    width: 18rem !important;
-    min-width: 18rem !important;
+    width: 12rem !important;
+    min-width: 12rem !important;
+    margin: 10px;
 }
 
 div#contactDetails {
@@ -85,6 +86,7 @@ div#contactDetails div.card {
 
 div#profile-info {
     width: 70%;
+    text-align: left;
 }
 .row {
     display: flex;

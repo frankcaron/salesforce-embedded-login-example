@@ -37,7 +37,11 @@ You'll also need to take the `sfdc_authmagic.js` file and upload it as public st
 
 # Tweaking the Front-End
 
-You can modify the template code in index.ejs to align your log in button where it makes sense. Both the back-end route handler for `profile` and the front end template `profile.ejs` have been customized for my first specific demo, but you can easily replace this code to pull whatever contact-related data you want from Salesforce for the load of the profile. Just make sure your user profile has read-write to the appropriate related records. ;)
+You can modify the template code in `index.ejs` and `profile.ejs` to tweak things as desired. 
+
+Both the back-end route handler for `profile` and the front end template `profile.ejs` have been customized for my first specific demo, but you can easily replace this code to pull whatever contact-related data you want from Salesforce for the load of the profile. The back-end code uses jsforce (though with the way I'm using it, it should be called bruteforce.) 
+
+Just make sure your user profile has read-write to the appropriate related records. ;)
 
 # Heroku Button
 
