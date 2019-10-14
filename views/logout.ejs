@@ -22,11 +22,15 @@
     <meta name="salesforce-save-access-token" content="true">
     <meta name="salesforce-self-register-starturl-enabled" content="true">
 
+    <!-- Salesforce Embedded Log In JavaScript Handlers -->
+    <meta name="salesforce-login-handler" content="onLogin">
+    <meta name="salesforce-logout-handler" content="onLogout">
+
     <!-- Salesforce Embedded Log In Custom Config -->
     <meta name="salesforce-mode" content="modal">
     <meta name="salesforce-self-register-enabled" content="true">
     <meta name="salesforce-target" content="#salesforce-login">
-
+    
     <!-- Salesforce Embedded Log In External Files -->
     <link href="<%= community_url%>/servlet/servlet.loginwidgetcontroller?type=css" rel="stylesheet" type="text/css" /> 
     <!-- <script src="<%= community_url%>/servlet/servlet.loginwidgetcontroller?type=javascript_widget" async defer></script> --> 
@@ -35,5 +39,8 @@
 
 </head>
 <body onload="javascript:onLogout();">
+  <div class="container">
+    <div id="salesforce-login"></div>
+  </div>
 </body>
 </html>

@@ -22,6 +22,7 @@ Follow the instructions [here](https://developer.salesforce.com/docs/atlas.en-us
 There are also two critical additional customizations you need to make:
 * Make sure your custom profile for the external user has API access enabled.
 * Add a custom attribute to the profile for the contact associated with the user record using the attribute name `ContactID`.
+* In this specific example, the code assumes there are three custom objects associated with the Contact: Wishes (Wish__c), Searches (Searches__c), and the external objcet Bookings (Bookings__x, referencing a field called `CustomerId` on the Contact). You'll need to modify the front and back-end code for `profile` if you want to ditch those.
 
 # Heroku Environment Variables
 
@@ -33,7 +34,7 @@ Once you've done that, you'll need to define a set of environment variables in y
 * `HOSTED_APP_URL_PROD` is your Heroku app's base URL without a trailing slash.
 * `BG_FAKE` is replaced with a picture of your chosen existing website for the background. 
 
-You'll also need to take the `sfdc_authmagic.js` file and upload it as public static content to your Salesforce org. The fully-qualified URL should be then filled into the final environment `STATIC_ASSET_URL`.
+You'll also need to take the `sfdc_authmagic.js` file and upload it as public static content to your Salesforce org. The fully-qualified URL should be then filled into the final environment `STATIC_ASSET_URL`. This is a temporary measure until a prod bug is fixed.
 
 # Tweaking the Front-End
 
@@ -47,6 +48,11 @@ Just make sure your user profile has read-write to the appropriate related recor
 
 [![One-Click Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+# To Do
+
+* Refactor to remove bespoke Embedded Login js file once the prod issue is patched
+* Add session management or cooking on the server side to allow more than one person to demo at a time, haha.
+
 # Thanks
 
-Big thanks to Ben Richards for teaching me that good builds can do more than decks ever could.
+Big thanks to Ben Richards for teaching me that good builds can do more than decks ever could, and Salesforce Identity guru Chuck Mortimore for helping with the prod issues.
