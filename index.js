@@ -17,6 +17,7 @@ var jsforce = require('jsforce');
 //App vars
 var refreshToken = "";
 var accessToken = "";
+var sessionContact = "";
 
 //Set up App
 app.set('view engine', 'ejs');
@@ -127,6 +128,7 @@ app.get('/server_callback', function(req, res){
         //Update refresh token
         accessToken = responseJSON.access_token;
         refreshToken = responseJSON.refresh_token;
+        sessionContact = responseJSON.custom_attributes.ContactID;
 
         console.log("Server Callback: Requesting the identity data...");
         
@@ -180,6 +182,7 @@ app.get('/logout', function(req, res){
 
     accessToken = "";
     refreshToken = "";
+    sessionContact = "";
     res.render('logout');
 
 }); 
