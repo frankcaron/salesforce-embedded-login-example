@@ -44,11 +44,19 @@ div.profile-container {
     margin: 0px;
     padding: 0px;
 }
-div.header-container {
-    height: 200px;
+div.profile-header {
+    height: 139px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: 100%;
+}
+div.profile-body {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+div.contactDetails {
+    
 }
 div#salesforce-login {
     position: absolute;
