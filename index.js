@@ -152,7 +152,7 @@ app.get('/server_callback', function(req, res){
             var JSONresponse = JSON.stringify(response);
 
             console.log("Server Callback Identity Response: " + JSONresponse);
-            sessionContact = JSONresponse.custom_attributes.ContactID;
+            sessionContact = response.custom_attributes.ContactID;
 
             res.render('server_callback', {
                 community_url: COMMUNITY_URL,

@@ -114,8 +114,22 @@ var SFIDWidget = function() {
     
     function addStartURLToUrl(url) {
         //Kick off useragent flow to grab them a token and log into the widget automatically
-        //OVERRIDDEN BY FRANK CARON
-    	var startURLToUse = "/services/oauth2/authorize?response_type=code&client_id="+SFIDWidget.config.client_id+"&redirect_uri="+encodeURIComponent(SFIDWidget.config.redirect_uri)+"&state="+encodeURIComponent(window.location);    
+
+        /* 
+            This following section has been overridden based on coaching from Chuck Mortimore of Frank Caron,
+            who is a Platform Solution Engineer at Salesforce. This is a bug in the existing production JS
+            which is generally referenced directly from the platform instead of self-hosted.
+            
+            This bug should be fixed in the production JS before you use this example. For more details, refer
+            to the readme and to the SalesforceIdentity Github account.
+
+            Dated October 14, 2019
+
+        */
+
+        var startURLToUse = "/services/oauth2/authorize?response_type=code&client_id="+SFIDWidget.config.client_id+"&redirect_uri="+encodeURIComponent(SFIDWidget.config.redirect_uri)+"&state="+encodeURIComponent(window.location);    
+        
+        /* =========== */
         
         if(SFIDWidget.config.addStartUrlToSelfReg === "true") {
    	 		if(url.indexOf("?") === -1) {
