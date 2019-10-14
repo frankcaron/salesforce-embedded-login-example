@@ -58,36 +58,48 @@
             </div>
             <div id="profile-info">
                 <div id="wishes">
+                    <div class="row">
                         <% for(var i=0; i<wishes.length; i++) {%>
-                            <div class="card">
-                                <div class="card-body">
-                                <h5 class="card-title"><%= wishes[i].Wish_Detail__c %></h5>
-                                <p class="card-text"><%= wishes[i].CreatedDate %></p>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <h5 class="card-title"><%= wishes[i].Wish_Detail__c %></h5>
+                                    <p class="card-text"><%= wishes[i].CreatedDate %></p>
+                                    </div>
                                 </div>
                             </div>
                         <% } %>
+                    </div>
                 </div>
                 <div id="searches">
+                    <div class="row">
                         <% for(var i=0; i<searchRecords.length; i++) {%>
-                            <div class="card">
-                                <div class="card-body">
-                                <h5 class="card-title"><%= searchRecords[i].Location__c %></h5>
-                                <p class="card-text"><%= searchRecords[i].CreatedDate %></p>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <h5 class="card-title"><%= searchRecords[i].Location__c %></h5>
+                                    <p class="card-text"><%= searchRecords[i].CreatedDate %></p>
+                                    </div>
                                 </div>
                             </div>
                         <% } %>
+                    </div>
                 </div>    
                 <div id="bookings">
+                    <div class="row">
                         <% for(var i=0; i<bookingRecords.length; i++) {%>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title"><%= bookingRecords[i].orderDate__c %></h5>
-                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                    <p class="card-text"><%= bookingRecords[i].orderID__c %></p>
-                                    <a href="#" class="card-link">View details</a>
+                            <div class="col-sm-3">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><%= bookingRecords[i].orderDate__c %></h5>
+                                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                        <p class="card-text"><%= bookingRecords[i].orderID__c %></p>
+                                        <a href="#" class="card-link">View details</a>
+                                    </div>
                                 </div>
                             </div>
                         <% } %>
+                    </div>
                 </div>   
             </div>
         </div>

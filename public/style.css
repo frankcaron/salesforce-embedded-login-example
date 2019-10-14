@@ -35,7 +35,7 @@ div.container {
     margin: 0px;
     padding: 0px;
     background-repeat: no-repeat;
-    background-size: 100%cc;
+    background-size: 100%;
     background-attachment: fixed;
 }
 div.profile-container {
@@ -54,7 +54,8 @@ div.profile-body {
     padding: 20px;
     margin: 20px;
     text-align: center;
-    display: in-line;
+    display: flex;
+    flex-wrap: wrap;
 }
 div#salesforce-login {
     position: absolute;
@@ -73,21 +74,15 @@ a.sfid-avatar-name:hover {
 /* Profile */
 div#contactDetails {
     width: 30%;
-    display: inline-block;
 }
 div.profile-info {
     width: 70%;
-    display: inline-block;
 }
-div#wishes {
-    padding: 0px;
-    display: inline-block;
-}
-div#searches {
-    padding: 0px;
-    display: inline-block;
-}
-div#bookings {
-    padding: 0px;
-    display: inline-block;
-}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ .row > div[class*='col-'] {
+   display: flex;
+ }
