@@ -35,7 +35,7 @@ div.container {
     margin: 0px;
     padding: 0px;
     background-repeat: no-repeat;
-    background-size: 100% 300px;
+    background-size: 100% 100%;
     background-attachment: fixed;
 }
 div.profile-container {
@@ -43,6 +43,9 @@ div.profile-container {
     height: 100%;
     margin: 0px;
     padding: 0px;
+}
+div.header-container {
+    height: 200px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
