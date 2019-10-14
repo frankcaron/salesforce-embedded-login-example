@@ -17,12 +17,12 @@ You will need:
 * A little bit of imagination
 
 # Salesforce Connected App Set Up
-Follow the instructions [here](https://developer.salesforce.com/docs/atlas.en-us.externalidentityImplGuide.meta/externalidentityImplGuide/external_identity_login_step_2.htm) for setting up a connected app. When configuring your connected app, be sure to use the URL `https://<yourherokuapp>.herokuapp.com/oauth_callback` for the call back. 
+Follow the instructions [here](https://developer.salesforce.com/docs/atlas.en-us.externalidentityImplGuide.meta/externalidentityImplGuide/external_identity_login_step_2.htm) for setting up a connected app. When configuring your connected app, be sure to use the URL `https://<yourherokuapp>.herokuapp.com/server_callback` for the call back. 
 
-There are also two critical additional customizations you need to make:
+There are also three critical additional customizations you need to make:
 * Make sure your custom profile for the external user has API access enabled.
 * Add a custom attribute to the profile for the contact associated with the user record using the attribute name `ContactID`.
-* In this specific example, the code assumes there are three custom objects associated with the Contact: Wishes (Wish__c), Searches (Searches__c), and the external objcet Bookings (Bookings__x, referencing a field called `CustomerId` on the Contact). You'll need to modify the front and back-end code for `profile` if you want to ditch those.
+* In this specific example, the code assumes there are three custom objects associated with the Contact: Wishes (Wish__c), Searches (Searches__c), and the external object Bookings (Bookings__x, referencing a field called `CustomerId` on the Contact). Your profile will need read for all of these. 
 
 # Heroku Environment Variables
 
