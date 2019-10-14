@@ -50,19 +50,21 @@ app.get('/profile', function(req, res){
         if (err) { return console.error(err); }
         console.log("Profile Render: Contact result size is " + result.totalSize);
         console.log("Profile Render: Number of contacts found is " + result.records.length);
+
         contactRecords = result.records;
+        console.log("Profile Render: Contact retrieved " + JSON.stringify(contactRecords));
+
+        //Render the page once records are fetched
+        res.render('profile', {
+            community_url: COMMUNITY_URL,
+            app_id: APP_ID,
+            callback_url: OAUTH_CALLBACK_URL,
+            background: BG_FAKE,
+            static_asset_url: STATIC_ASSET_URL,
+            contactRecords: contactRecords
+        }) 
+
     });
-
-    console.log("Profile Render: Contact retrieved" + JSON.stringify(contactRecords));
-
-    res.render('profile', {
-        community_url: COMMUNITY_URL,
-        app_id: APP_ID,
-        callback_url: OAUTH_CALLBACK_URL,
-        background: BG_FAKE,
-        static_asset_url: STATIC_ASSET_URL,
-        contactRecords: contactRecords
-    }) 
 }); 
 
 app.get('/_callback', function(req, res){ 
