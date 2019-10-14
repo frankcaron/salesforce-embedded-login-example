@@ -59,7 +59,7 @@ app.get('/profile', function(req, res){
 
         contactRecords = result.records;
         console.log("Profile Render: Contact retrieved " + JSON.stringify(contactRecords));
-        console.log("Profile Render: Contact has external ID of " + contactRecords[0].attributes.customerID__c);
+        console.log("Profile Render: Contact has external ID of " + contactRecords[0].customerID__c);
 
         //Grab Wishlist
         conn.query("SELECT Contact__c,CreatedDate,Id,Wish_Detail__c FROM Wish__c WHERE Contact__c = '" + sessionContact + "'", function(err, result) {
