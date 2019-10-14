@@ -52,7 +52,7 @@ div.profile-header {
 div.profile-body {
     padding: 20px;
     margin: 20px;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-wrap: wrap;
 }
