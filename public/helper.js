@@ -14,7 +14,7 @@ function onLogin(identity) {
     username.href = "https://sunwing-embedded-login-sfdc.herokuapp.com/profile?accesstoken=" + SFIDWidget.openid_response.access_token + "&id=" + SFIDWidget.openid_response.custom_attributes.ContactID;
     */
 
-    username.href = "https://sunwing-embedded-login-sfdc.herokuapp.com/profile";
+    username.href = "/profile";
     
     username.innerHTML = identity.username;
     username.className = "sfid-avatar-name";
@@ -36,4 +36,5 @@ function onLogin(identity) {
 
 function onLogout() {
     SFIDWidget.init();
+    window.location.replace="/";
 }

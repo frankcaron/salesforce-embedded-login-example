@@ -175,6 +175,16 @@ app.get('/server_callback', function(req, res){
 
 }); 
 
+
+app.get('/logout', function(req, res){ 
+
+    accessToken = "";
+    refreshToken = "";
+    res.render('logout');
+
+}); 
+
+
 //Run
 app.listen(PORT, function () {
   console.log('We\'re live on the magic listening action of port ' + PORT + '!');
