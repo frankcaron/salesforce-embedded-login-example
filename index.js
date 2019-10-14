@@ -27,6 +27,7 @@ app.use(cookieParser());
 
 //Routes
 app.get('/', function(req, res){ 
+
     res.render('index', {
         community_url: COMMUNITY_URL,
         app_id: APP_ID,

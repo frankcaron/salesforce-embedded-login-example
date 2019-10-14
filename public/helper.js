@@ -35,10 +35,7 @@ function onLogin(identity) {
 }
 
 function onLogout() {
-    SFIDWidget.logout();
-    //SFIDWidget.init();
-
-    console.log("Attempted to expire token and init.");
-
-    //window.location="/";
+    SFIDWidget.init();
+    console.log("Attempted to expire token and init. Redirecting...");
+    window.location="/";
 }
