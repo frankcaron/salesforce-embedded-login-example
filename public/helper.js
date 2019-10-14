@@ -9,7 +9,12 @@ function onLogin(identity) {
     avatar.href = "javascript:showIdentityOverlay();";
 
     var username = document.createElement('a'); 
+
+    /* If using client-side auth 
     username.href = "https://sunwing-embedded-login-sfdc.herokuapp.com/profile?accesstoken=" + SFIDWidget.openid_response.access_token + "&id=" + SFIDWidget.openid_response.custom_attributes.ContactID;
+    */
+
+    username.href = "https://sunwing-embedded-login-sfdc.herokuapp.com/profile";
     
     username.innerHTML = identity.username;
     username.className = "sfid-avatar-name";
