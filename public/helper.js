@@ -40,5 +40,5 @@ function onLogout() {
 
     console.log("Attempted to expire token and init.");
 
-    window.location="/";
+    //window.location="/";
 }
