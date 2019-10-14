@@ -43,6 +43,40 @@
         <h1>Profile</h1>
         <div id="salesforce-login"></div>
         <div><a href="/logout">Logout</a></div>
+
+        <!-- 
+            var contactRecords = [];
+            var bookingRecords = [];
+            var searchRecords = [];
+            var wishes = [];
+        -->
+
+        <div id="contactDetails">
+                <div>
+                    <%= contactRecords[0].FirstName %><br />
+                    <%= contactRecords[0].LastName %><br />
+                    <%= contactRecords[0].Phone %><br />
+                    <%= contactRecords[0].email %><br />
+                    <%= contactRecords[0].customerID__c %><br />
+                </div>
+        </div>
+        <div id="wishes">
+                <% for(var i=0; i<wishes; i++) {%>
+                    <div>
+                        <%= wishes[i].CreatedDate %><br />
+                        <%= wishes[i].Wish_Detail__c %>
+                    </div>
+                <% } %>
+        </div>
+        <div id="searches">
+                <% for(var i=0; i<searchRecords; i++) {%>
+                    <div>
+                        <%= searchRecords[i].CreatedDate %><br />
+                        <%= searchRecords[i].Location__c %>
+                    </div>
+                <% } %>
+        </div>       
+
     </div>
 
     
