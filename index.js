@@ -38,6 +38,12 @@ app.get('/', function(req, res){
 
 app.get('/profile', function(req, res){ 
 
+    // Redirect if the access token is missing
+    if(accessToken == null) {
+        res.redirect('/');
+    }
+
+    //Proceed with it then
     var conn = new jsforce.Connection({
         instanceUrl : COMMUNITY_URL,
         accessToken : accessToken
