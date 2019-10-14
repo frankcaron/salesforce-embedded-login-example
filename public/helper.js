@@ -37,5 +37,5 @@ function onLogin(identity) {
 function onLogout() {
     SFIDWidget.expireToken();
     SFIDWidget.init();
-    window.location.replace="/";
+    window.location="/";
 }
