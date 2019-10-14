@@ -1,7 +1,7 @@
 function onLogin(identity) {
     //responseJSON = JSON.parse(identity);
-    console.log("Identity = " + JSON.stringify(SFIDWidget.openid_response));
-    console.log("Access Token = " + SFIDWidget.openid_response.access_token);
+    //console.log("Identity = " + JSON.stringify(SFIDWidget.openid_response));
+    //console.log("Access Token = " + SFIDWidget.openid_response.access_token);
 		
     var targetDiv = document.querySelector(SFIDWidget.config.target);	
     

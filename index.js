@@ -36,7 +36,6 @@ app.get('/', function(req, res){
 
 app.get('/profile', function(req, res){ 
 
-    /* 
     var conn = new jsforce.Connection({
         instanceUrl : COMMUNITY_URL,
         accessToken : decodeURI(req.query.code)
@@ -48,7 +47,6 @@ app.get('/profile', function(req, res){
         console.log("Contact result : " + result.totalSize);
         console.log("Number of contacts found : " + result.records.length);
     });
-    */
 
     res.render('profile', {
         community_url: COMMUNITY_URL,
@@ -82,6 +80,8 @@ app.get('/server_callback', function(req, res){
     if (req.query.code != null) {
         code = decodeURI(code);
     } else {
+        //If there is no auth code, such as after registration, 
+        //then redirect back to main page and let them log in
         res.redirect('/');
     }
 
