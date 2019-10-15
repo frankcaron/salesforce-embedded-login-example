@@ -20,11 +20,11 @@
       },
       "OAUTH_CALLBACK_URL" : {
         "description": "The URL to your Heroku app's callback, without any trailing characters.",
-        "value": "Your Heroku app plus /_callback"
+        "value": "https://your.herokuapp.com/server_callback"
       },
       "HOSTED_APP_URL" : {
         "description": "The URL to your Heroku app, without any trailing characters.",
-        "value": "Your value here"
+        "value": "https://your.herokuapp.com"
       },
       "BG_FAKE" : {
         "description": "The URL to your community, without any trailing characters.",
