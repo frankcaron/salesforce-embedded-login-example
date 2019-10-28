@@ -98,9 +98,11 @@
                             <div class="col-sm-3">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title"><%= bookingRecords[i].orderID__c %></h5>
+                                        <h5 class="card-title"><%= bookingRecords[i].tourId__c %></h5>
                                         <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                        <p class="card-text"><%= bookingRecords[i].orderDate__c %></p>
+                                        <p class="card-text"><%= bookingRecords[i].tourDate__c %></p>
+                                        <p class="card-text"><%= bookingRecords[i].tourType__c %></p>
+                                        <p class="card-text"><%= bookingRecords[i].numTickets__c %></p>
                                         <a href="#" class="card-link">View details</a>
                                     </div>
                                 </div>
