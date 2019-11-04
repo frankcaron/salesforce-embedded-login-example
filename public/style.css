@@ -2,7 +2,7 @@ html, body {
     height: 100%;
     width: 100%;
     padding: 0px;
-    margin: 0px;
+    margin: 0px; /* Test */
 }
 button#sfid-login-button {
     background-color: #fff;
