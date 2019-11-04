@@ -11,7 +11,7 @@ button#sfid-login-button {
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: 22px;
+    border-radius: 0px;
     width: 120px;
     text-align: center;
     font-weight: bolder;
@@ -24,7 +24,7 @@ button#sfid-login-button:hover {
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: 22px;
+    border-radius: 0px;
     width: 120px;
     text-align: center;
     font-weight: bolder;
