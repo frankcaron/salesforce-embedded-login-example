@@ -17,12 +17,13 @@ You will need:
 * A little bit of imagination
 
 # Salesforce Connected App Set Up
-Follow the instructions [here](https://developer.salesforce.com/docs/atlas.en-us.externalidentityImplGuide.meta/externalidentityImplGuide/external_identity_login_step_2.htm) for setting up a connected app. When configuring your connected app, be sure to use the URL `https://<yourherokuapp>.herokuapp.com/server_callback` for the call back. 
+Follow the instructions [here](https://developer.salesforce.com/docs/atlas.en-us.externalidentityImplGuide.meta/externalidentityImplGuide/external_identity_login_step_2.htm) for setting up a connected app. Make sure that you also select the 'Access and manage your data (api)' OAuth scope since we will be querying user data from the org. When configuring your connected app, use the URL `https://<yourherokuapp>.herokuapp.com/server_callback` for the call back. 
 
-There are also three critical additional customizations you need to make:
+There are also four critical additional customizations you need to make:
 * Make sure your custom profile for the external user has API access enabled.
-* Add a custom attribute to the profile for the contact associated with the user record using the attribute name `ContactID`.
-* In this specific example, the code assumes there are three custom objects associated with the Contact: Wishes (Wish__c), Searches (Searches__c), and the external object Bookings (Bookings__x, referencing a field called `CustomerId` on the Contact). Your profile will need read for all of these. 
+* Add a custom attribute to the connected app for the contact associated with the user record using the attribute name `ContactID`.
+* In this specific example, the code assumes there are three custom objects associated with the Contact: Wishes (Wish__c), Searches (Searches__c), and the external object Bookings (Bookings__x, referencing a field called `CustomerId` on the Contact). Your profile will need read for all of these.
+* The community you are using should have it's 'Login Page Type' configured as the 'Default Page'. This can be set in the Community Builder Administration menu under the Login & Registration sub-menu item.
 
 # Heroku Environment Variables
 
